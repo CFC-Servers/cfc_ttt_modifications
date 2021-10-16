@@ -9,11 +9,11 @@ local function printPlayTime(time)
     local hours = math.floor( (time/HOUR) % HOUR )
 
     if weeks > 0 then
-            return string.format("%dW %dD  %dH", weeks, days, hours)
+        return string.format("%dW %dD  %dH", weeks, days, hours)
     end
 
     if days > 0 then
-            return string.format("%dD %dH", days, hours)
+        return string.format("%dD %dH", days, hours)
     end
 
     return string.format("%dH", hours)

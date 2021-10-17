@@ -5,8 +5,12 @@ local function printPlayTime(time)
     local out = ""
 
     local weeks = math.floor( time/WEEK )
-    local days = math.floor( (time/DAY) % DAY )
-    local hours = math.floor( (time/HOUR) % HOUR )
+    time = time - weeks * WEEK
+
+    local days = math.floor( time/DAY )
+    time = time - days * DAY
+
+    local hours = math.floor( time/HOUR )
 
     if weeks > 0 then
         return string.format("%dW %dD  %dH", weeks, days, hours)
@@ -18,6 +22,7 @@ local function printPlayTime(time)
 
     return string.format("%dH", hours)
 end
+
 
 hook.Add("TTTScoreboardColumns", "CFC_TTT_AddUtimeScoreboardColumn", function(pnl)
     pnl:AddColumn("Playtime", function(ply)

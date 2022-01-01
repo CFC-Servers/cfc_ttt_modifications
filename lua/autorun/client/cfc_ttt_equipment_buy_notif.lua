@@ -1,4 +1,7 @@
-LANG.AddToLanguage("english", "cfc_ttt_buy_notification", "{name} purchased equipment: {equipment}")
+hook.Add("InitPostEntity", "CFC_TTTModification_LangInit", function()
+    LANG.AddToLanguage("english", "cfc_ttt_buy_notification", "{name} purchased equipment: {equipment}")
+end)
+
 
 local equipmentLookup = {}
 for _, v in pairs( GetEquipmentForRole(ROLE_TRAITOR) ) do 

@@ -27,5 +27,5 @@ end
 hook.Add("TTTScoreboardColumns", "CFC_TTT_AddUtimeScoreboardColumn", function(pnl)
     pnl:AddColumn("Playtime", function(ply)
             return printPlayTime(ply:GetUTimeTotalTime())
-    end)
+    end, 100)
 end)

@@ -1,1 +1,1 @@
-table.insert(SprayURL.AllowedWebsites, "%fox.pics$")
+table.insert(SprayURL.AllowedWebsites, "^store.fox.pics$")

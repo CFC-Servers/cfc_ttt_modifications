@@ -1,0 +1,6 @@
+concommand.Add("sprayrandomfox", function( ply, cmd, args )
+	http.Fetch("https://api.fox.pics/v1/get-random-foxes", function(body, _, _, _)
+		local foxes = util.JSONToTable(body)
+		RunConsoleCommand("sprayurl", foxes[1])
+	end)
+end)

@@ -11,9 +11,6 @@ hook.Add("InitPostEntity", "CFC_TTTModification_InitEquipNotif", function()
     end
 end)
 
-
-
-
 net.Receive("CFC_TTT_EquipmentNotification", function()
     local ply = net.ReadEntity()
     local id = net.ReadString()
@@ -22,6 +19,6 @@ net.Receive("CFC_TTT_EquipmentNotification", function()
 
     LANG.Msg("cfc_ttt_buy_notification", {
         name=ply:GetName(),
-        equipment=LANG.Param(name),
+        equipment=LANG.TryTranslation(name),
     })
 end)
